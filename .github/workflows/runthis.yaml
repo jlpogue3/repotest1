@@ -1,0 +1,22 @@
+name: Run-This
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: "Trigger this"
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v3
+
+      - name: Update something
+        run: |
+          echo git status
+          git status
+          date >> autogen/log/newfile
+          git config user.name "GitHub Actions"
+          git config user.email "<>"
+          git add .
+          git commit -m "Automatic update via GitHub Actions"
+          git push origin HEAD
