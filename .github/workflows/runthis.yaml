@@ -1,4 +1,4 @@
-name Run-This
+name: Run-This
 
 on: push
 
